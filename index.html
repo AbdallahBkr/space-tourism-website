@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/assetsFontAwesome/css/fontawesome.css">
+    <link rel="stylesheet" href="css/assetsFontAwesome/css/brands.css">
+    <link rel="stylesheet" href="css/assetsFontAwesome/css/solid.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="nav" id="nav">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><g fill="none" fill-rule="evenodd"><circle cx="24" cy="24" r="24" fill="#FFF"/><path fill="#0B0D17" d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"/></g></svg>
+        </div>
+        <div class="menu-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z"/></g></svg>
+        </div>
+        <div class="menu" id="menu">
+            <div class="close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z"/><path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z"/></g></svg>
+            </div>
+            <ul>
+                <li>
+                    <span>00</span>
+                    Home
+                </li>
+                <li>
+                    <span>01</span>
+                    destination
+                </li>
+                <li>
+                    <span>02</span>
+                    crew
+                </li>
+                <li>
+                    <span>03</span>
+                    technology
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="landing" id="landing">
+        <div class="container">
+            <div class="text">
+                <h4 class="heading6" >so, you want to travel to</h4>
+                <h1 class="heading1" >space</h1>
+                <p> 
+                    Let’s face it; if you want to go to space,
+                    you might as well genuinely go to outer space and not hover kind of on the edge of it.
+                    Well sit back,
+                    and relax because we’ll give you a truly out of this world experience!</p>
+            </div>
+            <div class="explore">
+                <a href="#">
+                    explore
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="destination" id="destination">
+        <div class="container">
+            <h3><span>01</span> pick your destination</h3>
+            <div class="plants-tab">
+                <div class="images">
+                    <img src="images/destination/image-moon.png" alt=""   class="img_planets moon-img active-img-planet ">
+                    <img src="images/destination/image-mars.png" alt=""   class="img_planets mars-img">
+                    <img src="images/destination/image-europa.png" alt="" class="img_planets europa-img">
+                    <img src="images/destination/image-titan.png" alt=""  class="img_planets titan-img">
+                </div>
+                <ul class="tabs-plants" id="tabs-plants">
+                    <li class="tab-button-plants active-tab" data-tab =".moon" data-img_plant =".moon-img">moon</li>
+                    <li class="tab-button-plants" data-tab=".mars" data-img_plant =".mars-img" >mars</li>
+                    <li class="tab-button-plants" data-tab=".europa " data-img_plant =".europa-img" >europa</li>
+                    <li class="tab-button-plants" data-tab=".titan " data-img_plant =".titan-img">titan</li>
+                </ul>
+                <div class="infos moon info-plant-active">
+                    <h1>moon</h1>
+                    <p>
+                        See our planet as you’ve never seen it before. 
+                        A perfect relaxing trip away to help regain perspective and come back refreshed. 
+                        While you’re there, 
+                        take in some history by visiting the Luna 2 and Apollo 11 landing sites.
+                    </p>
+                    <div class="more-info">
+                        <div class="distance">
+                            <span>avg. distance</span>
+                            <h4>384,400 km</h4>
+                        </div>
+                        <div class="tavel-time">
+                            <span>est. travel time</span>
+                            <h4>3 days</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infos mars">
+                    <h1>mars</h1>
+                    <p>
+                        Don’t forget to pack your hiking boots. 
+                        You’ll need them to tackle Olympus Mons, 
+                        the tallest planetary mountain in our solar system. 
+                        It’s two and a half times the size of Everest!
+                    </p>
+                    <div class="more-info">
+                        <div class="distance">
+                            <span>avg. distance</span>
+                            <h4>225 mil. km</h4>
+                        </div>
+                        <div class="tavel-time">
+                            <span>est. travel time</span>
+                            <h4>9 months</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infos europa">
+                    <h1>EUROPA</h1>
+                    <p>
+                        The smallest of the four Galilean moons orbiting Jupiter, 
+                        Europa is a winter lover’s dream. With an icy surface, 
+                        it’s perfect for a bit of ice skating, curling, hockey, 
+                        or simple relaxation in your snug wintery cabin.
+                    </p>
+                    <div class="more-info">
+                        <div class="distance">
+                            <span>avg. distance</span>
+                            <h4>628 mil. km</h4>
+                        </div>
+                        <div class="tavel-time">
+                            <span>est. travel time</span>
+                            <h4>3 years</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infos titan">
+                    <h1>TITAN</h1>
+                    <p>
+                        The only moon known to have a dense atmosphere other than Earth, 
+                        Titan is a home away from home (just a few hundred degrees colder!). 
+                        As a bonus, you get striking views of the Rings of Saturn.
+                    </p>
+                    <div class="more-info">
+                        <div class="distance">
+                            <span>avg. distance</span>
+                            <h4>1.6 bil. km</h4>
+                        </div>
+                        <div class="tavel-time">
+                            <span>est. travel time</span>
+                            <h4>7 years</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

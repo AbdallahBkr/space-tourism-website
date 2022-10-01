@@ -1,0 +1,554 @@
+:root{
+    --heading1: 150px;
+    --heading2: 100px;
+    --heading3: 56px;
+    --heading4: 32px;
+    --heading5: 28px;
+    --character-space: 4.75;
+
+    --color1: #0B0D17;
+    --color2: #D0D6F7;
+    --color3: #FFFFFF;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Bellefair', serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+ul{
+    list-style-type: none;
+}
+.container{
+    margin:  0 auto;
+}
+/* computer screen */
+@media screen and (min-width: 1300px) {
+    .container{
+        width: 1450px;
+    }
+}
+/* tablet screen size 1 */
+@media screen and (max-width: 1299px) {
+    .container{
+        width: 990px;
+    }
+}
+/* tablet screen size 2 */
+@media screen and (max-width: 1000px) {
+    .container{
+        width: 840px;
+    }
+}
+/* tablet screen size 3 */
+@media screen and (max-width: 840px) {
+    .container{
+        width: 100%;
+    }
+}
+/* mobile screen size 1*/
+@media screen and (max-width: 468px) {
+    .container{
+        width: 100%;
+    }
+}
+
+
+/* something of small framework */
+
+.heading1{
+    font-size: var(--heading1);
+    color: var(--color3);
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.heading6{
+    font-size: var(--heading5);
+    word-spacing: var(--character-space);
+    color: var(--color2);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* start working on header */
+.landing{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 100px;
+}
+                /* computer screen */
+@media screen and (min-width: 768px) {
+    .landing{
+        background-image: url(../images/home/background-home-desktop.jpg);
+    }
+}
+                /* tablet screen*/
+@media screen and (max-width: 768px) {
+    .landing{
+        background-image: url(../images/home/background-home-tablet.jpg);
+    }
+}
+                /* mobile screen */
+@media screen and (max-width: 375px) {
+    .landing{
+        background-image: url(../images/home/background-home-mobile.jpg);
+    }
+}
+.close-button,.menu-button{
+    display: none;
+}
+
+/* start working on nav bar */
+.nav{
+    color: white;
+    text-transform: uppercase;
+    position: fixed;
+    top: 1px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.closed{
+    right: 0 ;
+    display: block ;
+}
+.close-button,.menu-button{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+.nav .logo{
+    flex-basis: 50%;
+    padding-left: 60px;
+}
+.nav .menu{
+    backdrop-filter: blur(25px);
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: 0.4s ease-in;
+    z-index: 120;
+}
+.nav span{
+    font-weight: bold;
+    word-spacing: 7.75;
+    margin-right: 6px;
+}
+.menu ul{
+    display: flex;
+    padding: 0 30px;
+    align-items: center;
+    padding-left: 10%;
+    z-index: 100;
+    gap: 40px;
+    width: 100%;
+}
+.menu::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 0 3000px inset rgba(150, 150, 150, 0.097);
+}
+.menu::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -77%;
+    height: 0.5px;
+    width: 80%;
+    background-color: var(--color2);
+    opacity: 0.5;
+}
+.menu ul li{
+    padding: 30px 0;
+    font-size: 18px;
+    letter-spacing: 2.75px;
+    font-weight: 300;
+    transition: 0.4s ease-in;
+}
+.menu ul li:first-of-type{
+    border-bottom: 3px solid white;
+}
+.menu ul li:hover{
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 968px) {
+    .nav{
+        padding: 0;
+    }
+    .nav span{
+        display: none;
+    }
+    .nav .logo{
+        flex-basis: 40%;
+    }
+    .nav .menu{
+        flex-basis: 60%;
+    }
+    .menu ul{
+        justify-content: center;
+        padding: 0;
+    }
+    .menu::after{
+        display: none;
+    }
+    .menu ul li{
+        padding: 30px 0;
+    }
+}
+@media screen and (max-width: 550px) {
+    .nav{
+        align-items: unset;
+        z-index: 50;
+    }
+    .nav span{
+        display: inline-block;
+    }
+    .nav .logo{
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+    .menu-button,.close-button{
+        display: block;
+    }
+    .nav .menu{
+        flex-basis: 80%;
+        height: 100vh;
+        position: fixed;
+        width: 80%;
+        top: 0%;
+        right: -100%;
+        z-index: 2;
+    }
+    .menu ul{
+        flex-direction: column;
+        padding-left: 35px;
+        align-items: unset;
+        position: absolute;
+        top: 15%;
+    }
+    .nav .menu ul li:first-of-type{
+        border-right: 5px solid white;
+    }
+    .nav .menu ul li{
+        padding: 5px 0;
+        border-bottom: none;
+        width: 100%;
+        font-size: 20px;
+    }
+}
+
+/* start working on the landing of page */
+.landing .container{
+    display: flex;
+    align-items: center;
+}
+.landing .text{
+    flex: 1;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.landing .text h1{
+    margin: 20px 0;
+    padding: 0%;
+}
+.landing .text p{
+    color: var(--color2);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 2;
+    text-align: left;
+    width: 440px;
+}
+.landing .explore{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.landing .explore a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color1);
+    font-size: var(--heading4);
+    background-color: var(--color3);
+    width: 220px;
+    height: 220px;
+    text-align: center;
+    line-height: 220px;
+    border-radius: 50%;
+    transition: 0.4s ease;
+    outline: 0px solid rgba(250, 250, 250, 0.3);
+}
+.landing .explore a:hover{
+    outline: 60px solid rgba(250, 250, 250, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        font-size: 18px;
+    }
+    .header{
+        gap: 20px;
+    }
+    .landing{
+        padding: 100px 0;
+    }
+    .landing .container{
+        flex-direction: column;
+        gap: 75px;
+    }
+    .landing .text{
+        text-align: center;
+        padding-left: 0;
+    }
+    .landing .text h1{
+        margin-bottom: 0px;
+    }
+    .landing .text p{
+        margin: 0;
+        padding: 0%;
+        text-align: center;
+    }
+    .landing .explore a:hover{
+        outline: 30px solid rgba(250, 250, 250, 0.3);
+    }
+}
+@media screen and (max-width: 550px) {
+    .header{
+        gap: 40px;
+    }
+    .landing .container{
+        gap: 40px;
+    }
+    .landing .text h4{
+        font-size: 16px;
+        letter-spacing: 2.75px;
+    }
+    .landing .text h1{
+        font-size: 80px;
+        margin: 20px 0;
+    }
+    .landing .text p{
+        width: 300px;
+    }
+    .landing .explore a{
+        font-size: 24px;
+        line-height: 180px;
+        width: 180px;
+        height: 180px;
+    }
+}
+
+
+/* start working on destination */
+.destination{
+    min-height: 100vh;
+    background-image: url(../images/destination/background-destination-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.destination .container{
+    height: 100%;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.destination .container h3{
+    font-size: var(--heading4);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 2.75px;
+    margin-bottom: 40px;
+}
+.destination .container h3 span{
+    opacity: 25%;
+    font-weight: 500;
+}
+
+.plants-tab {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 10% 90%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+}
+    
+.plants-tab .images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: 1 / 1 / 3 / 2; 
+}
+.plants-tab .images {
+    overflow: auto;
+    gap: 10px;
+    position: relative;
+    height: 240px;
+}
+.img_planets{
+    position: absolute;
+    left: -100%;
+    transition: 0.6s ease-in;
+}
+.plants-tab .tabs-plants {
+    display: flex;
+    gap: 20px;
+    grid-area: 1 / 2 / 2 / 3; 
+}
+.plants-tab .infos { 
+    grid-area: 2 / 2 / 3 / 3; 
+    display: none;
+}
+.plants-tab .tabs-plants li {
+    color: var(--color2);
+    font-size: var(--heading5);
+    text-transform: uppercase;
+    font-family: 'Barlow Condensed', sans-serif;
+    cursor: pointer;
+    padding-inline: 2px;
+}
+
+.plants-tab .infos h1{
+    font-size: var(--heading2);
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 40px 0px;
+}
+.plants-tab .infos p{
+    color: var(--color2);
+    font-size: 20px;
+    padding-bottom: 40px;
+    font-family: 'Barlow Condensed', sans-serif;
+    border-bottom: #d0d6f760 solid 1px;
+}
+.plants-tab .infos .more-info{
+    display: flex;
+    gap: 40px;
+    color: var(--color2);
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+.plants-tab .infos .more-info span{
+    font-family: 'Barlow Condensed', sans-serif;
+    margin-bottom: 10px;
+    letter-spacing: 2.75px;
+}
+.plants-tab .infos .more-info h4{
+    color: white;
+    font-weight: 300;
+    font-size: 28px;
+}
+
+/* tablet screen */
+@media screen and (max-width : 856px) {
+    .destination{
+        padding: 100px 0;
+        background-image: url(../images/destination/background-destination-tablet.jpg);
+    }
+    .destination .container h3{
+        margin-left: 10px;
+    }
+    .plants-tab{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .plants-tab .images {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+        padding : 20px;
+    }
+    .plants-tab .images img{
+        max-width: 100%;
+    }
+    .plants-tab .tabs-plants {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+    .plants-tab .tabs-plants li{
+        font-size: 18px;
+        padding: 5px 2px;
+    }
+    .plants-tab .infos{
+        flex-basis: 80%;
+        text-align: center;
+    }
+    .plants-tab .infos .more-info{
+        justify-content: center;
+    }
+}
+@media screen and (max-width : 456px) {
+    .destination{
+        background-image: url(../images/destination/background-destination-mobile.jpg);
+    }
+    .plants-tab .images img{
+        max-width: 200px;
+    }
+    .destination .container h3{
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+    }
+    .plants-tab .infos h1{
+        font-size: 56px;
+        margin: 12px;
+    }
+    .plants-tab .infos p{
+        line-height: 2;
+    }
+    .plants-tab .infos .more-info{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .plants-tab .infos .more-info > div h4{
+        padding-top: 15px;
+    }
+}
+
+
+.active-tab{
+    color: white;
+    border-bottom: white solid 3px;
+}
+.active-img-planet{
+    position: relative;
+    z-index: 1;
+    left: 0;
+}
+.plants-tab .info-plant-active{
+    display: block;
+}
