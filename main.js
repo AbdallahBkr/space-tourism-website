@@ -94,3 +94,50 @@ indiactes_crew_array.forEach(span =>{
         img_crew.classList.add("active-img-crew")
     })
 })
+
+// start working on technology
+const indiactes_tech = document.querySelectorAll(".indiactes-tech");
+const indiactes_tech_array = Array.from(indiactes_tech);
+
+const infos_tech  = document.querySelectorAll(".info-tech");
+const infos_tech_array = Array.from(infos_tech);
+
+const img_tech = document.querySelectorAll(".img-tech");
+const img_tech_array = Array.from(img_tech);
+
+const img_landscape_tech = document.querySelectorAll(".img-tech-landscape");
+const img_landscape_tech_array = Array.from(img_landscape_tech);
+
+console.log(indiactes_tech_array);
+console.log(infos_tech_array);
+console.log(img_tech_array);
+console.log(img_landscape_tech_array);
+
+
+indiactes_tech_array.forEach( li => {
+    li.addEventListener("click", target => {
+        // تجريد الأمور من صفة الفعالة
+        // Remove active class from these elements
+        indiactes_tech_array.forEach( element =>{
+            element.classList.remove("active-tech-tab");
+        })
+        infos_tech_array.forEach(element => {
+            element.classList.remove("active-info-tech");
+        })
+        img_tech_array.forEach(element => {
+            element.classList.remove("active-img-tech");
+        })
+        img_landscape_tech_array.forEach(element => {
+            element.classList.remove("active-img-tech-landscape");
+        })
+
+        const targetInfo = document.querySelector(target.currentTarget.dataset.techinfo);
+        const targetImg = document.querySelector(target.currentTarget.dataset.techimg);
+        const targetImgLandscape = document.querySelector(target.currentTarget.dataset.techimglandscape);
+
+        targetInfo.classList.add("active-info-tech");
+        targetImg.classList.add("active-img-tech");
+        targetImgLandscape.classList.add("active-img-tech-landscape");
+        li.classList.add("active-tech-tab");
+    })
+})
