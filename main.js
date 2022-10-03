@@ -1,3 +1,4 @@
+// menu
 let close_button = document.querySelector(".close-button");
 let menu_button = document.querySelector(".menu-button");
 
@@ -49,10 +50,47 @@ tabs_planets_array.forEach(li =>{
         li.classList.add("active-tab");
         let info_plant = document.querySelector(target.currentTarget.dataset.tab);
         let img_plant = document.querySelector(target.currentTarget.dataset.img_plant);
-        
         info_plant.classList.add("info-plant-active");
         img_plant.classList.add("active-img-planet");
     }
 )
 }
 )
+
+
+
+
+// crew
+const imgs_crew = document.querySelectorAll(".img-crew");
+const imgs_crew_array = Array.from(imgs_crew);
+
+const infos_crew = document.querySelectorAll(".info-crew");
+const infos_crew_array = Array.from(infos_crew);
+
+const indiactes_crew = document.querySelectorAll(".indicates span");
+const indiactes_crew_array = Array.from(indiactes_crew);
+
+indiactes_crew_array.forEach(span =>{
+    span.addEventListener("click", target =>{
+
+        indiactes_crew_array.forEach( e=>{
+            e.classList.remove("active-indiacte")
+        })
+
+        infos_crew_array.forEach(e=>{
+            e.classList.remove("active-info-crew");
+        })
+
+        imgs_crew_array.forEach(e=>{
+            e.classList.remove("active-img-crew");
+        })
+
+        span.classList.add("active-indiacte");
+
+        const info_crew = document.querySelector(target.currentTarget.dataset.crewinfo); 
+        const img_crew = document.querySelector(target.currentTarget.dataset.crewimg);
+
+        info_crew.classList.add("active-info-crew")
+        img_crew.classList.add("active-img-crew")
+    })
+})
